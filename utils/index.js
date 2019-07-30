@@ -26,9 +26,26 @@ const checkImageExisted = filePath => {
 	});
 };
 
+const deleteimageByID = filePath => {
+	return new Promise(async (resolve, reject) => {
+		fs.access(`AvatarImages/${filePath}.png`, fs.F_OK, err => {
+			if (err) {
+				reject(err);
+			} else {
+				fs.unlink(`AvatarImages/${filePath}.png`, err => {
+					if (err) {
+						reject(err);
+					}
+					resolve();
+				});
+			}
+		});
+	});
+};
+
 const imageEncodeBase64 = filePath => {
 	const image = fs.readFileSync(filePath);
 	console.log("I'm from image encode", image);
 	return image.toString("base64");
 };
-module.exports = { saveImageToDisk, checkImageExisted };
+module.exports = { saveImageToDisk, checkImageExisted, deleteimageByID };
