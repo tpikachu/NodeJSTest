@@ -6,6 +6,7 @@
 	"scripts": {
 		"start": "cross-env NODE_ENV=production node index",
 		"dev": "cross-env NODE_ENV=development node index",
+		"scrap": "node scrap",
 		"test": "echo \"Error: no test specified\" && exit 1"
 	},
 	"repository": {
@@ -24,8 +25,10 @@
 		"cookie-parser": "^1.4.4",
 		"cors": "^2.8.5",
 		"cross-env": "^5.2.0",
+		"edit-json-file": "^1.2.1",
 		"express": "^4.17.1",
 		"fs": "^0.0.1-security",
-		"https": "^1.0.0"
+		"https": "^1.0.0",
+		"node-cron": "^2.0.3"
 	}
 }
